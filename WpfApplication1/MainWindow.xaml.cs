@@ -114,20 +114,7 @@ namespace WpfApplication1
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-
-            /*
-             Создайте базу данных «Продажи» (в качестве формата базы данных можно использовать
-Microsoft Access). Создайте внутри базы данных три таблицы:
-1) Таблица Покупатели. Столбцы: идентификатор, имя, фамилия;
-2) Таблица Продавцы. Столбцы: идентификатор, имя, фамилия;
-3) Таблица Продажи. Столбцы: идентификатор сделки, идентификатор покупателя,
-идентификатор продавца, сумма сделки, дата сделки.
-Наполните таблицы данными, задайте правила ссылочной целостности.
-Реализуйте WinForms приложение, позволяющее пользователю выбрать название таблицы
-из базы данных sample.mdb (например, с помощью выпадающего списка), в результате
-выбора таблицы приложение должно отображать содержимое данной таблицы на форму
-*/
-
+			
             List<string> commands = new List<string>();
             commands.Add(
                 @"create table Customers ( id INT not null primary key identity,
@@ -179,18 +166,6 @@ Microsoft Access). Создайте внутри базы данных три т
         
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            /*
-    using (SqlConnection con = new SqlConnection(ConString))
-    {
-        CmdString = "SELECT emp_id, fname, lname, hire_date FROM Employee";
-        SqlCommand cmd = new SqlCommand(CmdString, con);
-        SqlDataAdapter sda = new SqlDataAdapter(cmd);
-        DataTable dt = new DataTable("Employee");
-        sda.Fill(dt);
-        grdEmployee.ItemsSource = dt.DefaultView; 
-    }  
-    
-    */
             try
             {
                 using (SqlConnection connection =
